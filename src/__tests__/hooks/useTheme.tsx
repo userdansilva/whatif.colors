@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react";
 import { useTheme, ThemeProvider } from "../../hooks/useTheme";
 
 const mockedSetItemLocalStorage = jest.spyOn(Storage.prototype, "setItem");

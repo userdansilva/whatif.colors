@@ -26,11 +26,12 @@ export function ThemeDisplayReadOnly(props: ThemeDisplayProps): JSX.Element {
         w-full bg-secondary-900 rounded-lg shadow-lg p-6 max-w-[250px] 
         h-96 relative group overflow-hidden hover:shadow-2xl
       `}
+      data-testid="theme-container"
       style={{ background }}>
       <div className="flex items-center text-base" style={{ color: primaryText }}>
         <div className="flex items-center gap-2 font-bold flex-1">
           <Palette />
-          <div className="truncate max-w-[170px]">{name === "" ? "Whatif.colors" : name}</div>
+          <div className="truncate max-w-[170px]" data-testid="theme-title">{name}</div>
         </div>
         <List style={{ color: secondaryText }} />
       </div>
@@ -63,10 +64,17 @@ export function ThemeDisplayReadOnly(props: ThemeDisplayProps): JSX.Element {
         absolute inset-0 bg-secondary-900 opacity-0 group-hover:opacity-90 transition-opacity
         flex items-center justify-center gap-4
       `}>
-        <Link to={`/edit/${id}`} className="btnAction border-warning-600 text-warning-600">
+        <Link
+          to={`/edit/${id}`}
+          data-testId="theme-edit"
+          className="btnAction border-warning-600 text-warning-600">
           <PencilSimple weight="fill" />
         </Link>
-        <button type="button" className="btnAction border-danger-600 text-danger-600" onClick={() => removeTheme(id)}>
+        <button
+          type="button"
+          data-testId="theme-remove"
+          className="btnAction border-danger-600 text-danger-600"
+          onClick={() => removeTheme(id)}>
           <Trash weight="fill" />
         </button>
       </div>

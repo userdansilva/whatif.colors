@@ -12,6 +12,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
+    "plugin:cypress/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -46,9 +47,8 @@ module.exports = {
     "no-debugger": "warn",
     semi: ["error", "always"],
     camelcase: "error",
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     quotes: [2, "double"],
-    // to verify ---------------------------------
     "object-shorthand": "off",
     "no-tabs": [
       "error",

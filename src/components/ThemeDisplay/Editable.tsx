@@ -20,7 +20,7 @@ export function ThemeDisplayEditable({ control }: ThemeDisplayProps): JSX.Elemen
       <div className="flex items-center text-base" style={{ color: primaryTextColor }}>
         <div className="flex items-center gap-2 font-bold flex-1">
           <Palette />
-          <div className="truncate max-w-[170px]">{name === "" ? "Whatif.colors" : name}</div>
+          <div className="truncate max-w-[170px]" data-testid="theme-title">{name === "" ? "Whatif.colors" : name}</div>
         </div>
         <List style={{ color: secondaryTextColor }} />
       </div>
