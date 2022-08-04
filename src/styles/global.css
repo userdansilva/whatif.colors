@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-sm text-secondary-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-primary-600 py-3 px-9 text-white rounded-md min-w-[150px] flex items-center gap-2 justify-center
+  }
+
+  .btnAction {
+    @apply h-10 w-10 flex items-center rounded-full justify-center text-xl border-2
+  }
+
+  .inputColor {
+    @apply h-14 w-14 appearance-none bg-transparent border-none cursor-pointer shadow-lg
+  }
+
+  .inputColor::-webkit-color-swatch {
+    @apply rounded-md border-none
+  }
+}
