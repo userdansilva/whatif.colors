@@ -15,6 +15,10 @@ export function Home(): JSX.Element {
 
   const { themes } = useTheme();
 
+  const thereIsTheme = themes.length > 0;
+  const isThemeMathesSearch = themes.filter((theme) => normalizeString(theme.name)
+    .includes(normalizeString(search))).length > 0;
+
   return (
     <Layout>
       <div className="flex items-center mb-10">
@@ -39,7 +43,26 @@ export function Home(): JSX.Element {
         </Link>
       </div>
 
+      {!thereIsTheme && search === "" && (
+        <div className="h-[calc(100vh-500px)] flex items-center justify-center flex-col gap-4">
+          <h1 className="font-bold text-2xl">Lucks like you don&#39;t have any theme yet! 😕</h1>
+          <p>
+            <Link to="/create" className="text-primary-600">
+              Clique here
+            </Link>{" "}
+            to create your first
+          </p>
+        </div>
+      )}
+
+      {!isThemeMathesSearch && search !== "" && (
+        <div className="h-[calc(100vh-500px)] flex items-center justify-center">
+          <h1 className="font-bold text-2xl">There is no theme that matches your search! 😕</h1>
+        </div>
+      )}
+
       <div className="grid justify-between grid-cols-4 gap-6 mb-10">
+
         {themes.filter((theme) => normalizeString(theme.name)
           .includes(normalizeString(search)))
           .sort((a, b) => b.id - a.id).map((theme) => (
