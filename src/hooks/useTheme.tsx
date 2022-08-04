@@ -22,7 +22,7 @@ interface ThemeContextData {
   addTheme: (theme: NewTheme) => void
   editTheme: (theme: Theme) => void
   removeTheme: (id: number) => void
-  getTheme: (id: number) => Theme | undefined
+  getTheme: (name: number) => Theme | undefined
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);

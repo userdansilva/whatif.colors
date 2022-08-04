@@ -1,0 +1,9 @@
+node_modules
+dist
+/*.js
+/*.html
+/*.ts
+/*.cjs
+/*.lock
+/*.log
+/*.json
